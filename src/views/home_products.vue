@@ -10,7 +10,6 @@
         <div>
           <button @click="addToCart(product)">เพิ่มลงในตะกร้า</button>
           <button @click="removeFromCart(product)" :disabled="product.cartQuantity === 0">ลดจากตะกร้า</button>
-          <button @click="calculateTotal()">คำนวณราคารวม</button>
           <p>ผลรวม: ฿{{ total }}</p>
           <span>{{ product.cartQuantity }}</span>
           </div>
