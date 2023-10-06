@@ -34,8 +34,12 @@
   </table>
       <button class="btn btn-primary mb-5" @click="cart_store.clear_cart()">เคลียตะกร้า</button>
       <button class="btn btn-success mb-5 mx-2">รวม {{ currencyTHB(cart_store.total) }}</button>
- 
+      
+          
+
+          
 </template>
+
 
 <script setup>
 import { computed } from 'vue'

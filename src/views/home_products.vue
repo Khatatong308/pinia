@@ -10,18 +10,23 @@
         <div>
           <button @click="addToCart(product)">เพิ่มลงในตะกร้า</button>
           <button @click="removeFromCart(product)" :disabled="product.cartQuantity === 0">ลดจากตะกร้า</button>
+          <button @click="calculateTotal()">คำนวณราคารวม</button>
+          <p>ผลรวม: ฿{{ total }}</p>
           <span>{{ product.cartQuantity }}</span>
-        </div>
+          </div>
       </div>
     </div>
   </div>
+  
 </template>
+
 
 <script>
 export default {
   data() {
     return {
       products: [],
+      total: 0, 
     };
   },
   created() {
@@ -32,22 +37,36 @@ export default {
         description: `รายละเอียดสินค้าที่ ${i}`,
         price: (i * 10).toFixed(2), 
         image: `url_to_image_${i}.jpg`, 
-        cartQuantity: 0, // เพิ่ม cartQuantity ในสินค้า
+        cartQuantity: 0, 
       });
     }
   },
   methods: {
     addToCart(product) {
       product.cartQuantity++;
+      this.calculateTotal(); 
     },
     removeFromCart(product) {
       if (product.cartQuantity > 0) {
         product.cartQuantity--;
+        this.calculateTotal(); 
       }
     },
+    calculateTotal() {
+  this.total = this.products.reduce((total, product) => {
+    if (product.cartQuantity > 0) {
+      return total + product.price * product.cartQuantity;
+    }
+  return total;
+      }, 
+    0);
   },
+},
+  
 };
 </script>
+
+
 
 <style scoped>
 .product-list {

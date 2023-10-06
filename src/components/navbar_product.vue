@@ -14,21 +14,14 @@
               <routerLink to="/cart" class="nav-link" aria-current="page">ตะกร้าสินค้า</routerLink>
             </li>
           </ul>
-          <div class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="ค้นหาเลย.." aria-label="Search" v-model="product_store.input">
-          </div>
-        </div>
+       </div>
       </div>
     </nav>
     </template>
-    
-    <script setup>
-    import { useProductStore } from '../store/product';
-    
-    const product_store = useProductStore()
-    
-    </script>
-    
-    <style lang="scss" scoped>
-    
-    </style>
+  
+<script setup>
+</script>
+
+
+<style lang="scss" scoped>
+</style>

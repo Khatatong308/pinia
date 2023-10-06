@@ -14,6 +14,8 @@
       </div>
       <h2>ราคารวมในตะกร้า: ฿{{ calculateTotal() }}</h2>
     </div>
+
+    
   </template>
   
   <script>
@@ -39,17 +41,17 @@
     },
     methods: {
       addToCart(product) {
-        // เพิ่มสินค้าลงในตะกร้าโดยเพิ่มจำนวนสินค้าในรายการสินค้า
+        
         product.quantity++;
       },
       removeFromCart(product) {
-        // ลดจำนวนสินค้าในตะกร้า
+       
         if (product.quantity > 0) {
           product.quantity--;
         }
       },
       calculateTotal() {
-        // คำนวณราคารวมในตะกร้า
+        
         return this.cart.reduce((total, product) => total + product.price * product.quantity, 0);
       },
     },
@@ -57,7 +59,7 @@
   </script>
   
   <style scoped>
-  /* เพิ่มสไตล์ CSS ของการ์ดสินค้าที่นี่ */
+ 
   .product-list {
     display: flex;
     flex-wrap: wrap;

@@ -19,6 +19,7 @@ onMounted(() => cart_store.loadFromLocalStorage())
 
 
 
+
 </script>
 
 <style lang="scss" scoped>
